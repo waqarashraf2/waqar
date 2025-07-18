@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqar Ashraf Gondal | Full Stack Developer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'text-gradient': 'text-gradient 4s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        'text-gradient': {
+                            'to': { 'background-position': '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://unpkg.com/gsap@3.11.4/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-['Poppins'] scroll-smooth">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Waqar</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-indigo-400 transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link hover:text-indigo-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link hover:text-indigo-400 transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-indigo-400 transition-colors duration-300">Projects</a>
+                    <a href="#experience" class="nav-link hover:text-indigo-400 transition-colors duration-300">Experience</a>
+                    <a href="#contact" class="nav-link hover:text-indigo-400 transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-4 pb-4">
+                <a href="#home" class="block nav-link hover:text-indigo-400 transition-colors duration-300">Home</a>
+                <a href="#about" class="block nav-link hover:text-indigo-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="block nav-link hover:text-indigo-400 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="block nav-link hover:text-indigo-400 transition-colors duration-300">Projects</a>
+                <a href="#experience" class="block nav-link hover:text-indigo-400 transition-colors duration-300">Experience</a>
+                <a href="#contact" class="block nav-link hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-[length:40px_40px] [mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_75%)]" style="background-image: radial-gradient(hsla(0,0%,100%,.3) 1px,transparent 0);"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Text Content -->
+                <div class="md:w-1/2 space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-4xl md:text-6xl font-bold">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Waqar Ashraf</span>
+                    </h1>
+                    
+                    <!-- Animated Typewriter Effect -->
+                    <div class="h-16">
+                        <h2 id="typewriter" class="text-2xl md:text-3xl font-medium text-gray-300"></h2>
+                    </div>
+                    
+                    <p class="text-lg text-gray-400 max-w-lg">
+                        Full Stack Developer specializing in modern web technologies. I build responsive, performant, and visually stunning web applications.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/20 animate-pulse">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="px-8 py-3 border border-indigo-400 text-indigo-400 hover:bg-indigo-400/10 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
+                            View Projects
+                        </a>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="pt-6 flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Photo Container -->
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative group">
+                        <!-- Replace with your actual photo -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-indigo-500/30 relative">
+                            <img src="Waqar.jpg" alt="Waqar Ashraf Gondal" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Animated Decoration Elements -->
+                        <div class="absolute -inset-4 rounded-full border-2 border-indigo-400/30 animate-pulse group-hover:animate-none group-hover:border-indigo-400/60 transition-all duration-1000"></div>
+                        <div class="absolute -inset-6 rounded-full border-2 border-indigo-400/10 group-hover:border-indigo-400/30 transition-all duration-1000 delay-200"></div>
+                        
+                        <!-- Floating Tech Icons Around Photo -->
+                        <div class="absolute -top-8 -left-8 w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-float">
+                            <i class="fab fa-react text-cyan-400 text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-8 -right-8 w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-float delay-1000">
+                            <i class="fab fa-laravel text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-8 -right-8 w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-float delay-500">
+                            <i class="fab fa-js text-yellow-400 text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-float delay-1500">
+                            <i class="fas fa-database text-blue-400 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="w-8 h-14 border-4 border-indigo-400 rounded-3xl relative block">
+                <div class="w-2 h-2 bg-indigo-400 rounded-full absolute top-2 left-1/2 -translate-x-1/2"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 relative">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">About Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- About Image with Animation -->
+                <div class="lg:w-1/3 flex justify-center" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-indigo-500/30 relative">
+                            <img src="Waqar.jpg" alt="Waqar Ashraf Gondal" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -inset-4 rounded-2xl border-2 border-indigo-400/30 animate-pulse"></div>
+                        <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center border-2 border-indigo-400/30">
+                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About Content -->
+                <div class="lg:w-2/3" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Full Stack Developer Based in Pakistan</h3>
+                    <p class="text-gray-400 mb-6">
+                        I'm Waqar Ashraf Gondal, a passionate Full Stack Developer with expertise in building modern web applications. With over 5 years of experience, I specialize in creating responsive, user-friendly, and high-performance websites and applications.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Name:</h4>
+                                <p class="text-gray-400">Waqar Ashraf Gondal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Email:</h4>
+                                <p class="text-gray-400">waqar@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Experience:</h4>
+                                <p class="text-gray-400">5+ Years</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Freelance:</h4>
+                                <p class="text-gray-400">Available</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
+                            Download CV
+                        </a>
+                        <a href="#contact" class="px-6 py-2 border border-indigo-400 text-indigo-400 hover:bg-indigo-400/10 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
+                            Hire Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-indigo-600 rounded-full filter blur-3xl opacity-10"></div>
+        <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-purple-600 rounded-full filter blur-3xl opacity-10"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 relative">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">My Skills</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-indigo-400 mb-4 text-4xl">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Frontend Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        Building responsive and interactive user interfaces with modern technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">HTML5</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">CSS3</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Tailwind</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-indigo-400 mb-4 text-4xl">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Backend Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        Creating robust server-side applications and APIs with efficient databases.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">PHP</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Laravel</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-indigo-400 mb-4 text-4xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Other Skills</h3>
+                    <p class="text-gray-400 mb-4">
+                        Additional technologies and tools I work with to deliver complete solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Git</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">AWS</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">Three.js</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-sm">GSAP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skill Bars -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Frontend Skills -->
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-bold mb-6">Frontend Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div data-aos="fade-left">
+                    <h3 class="text-xl font-bold mb-6">Backend Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>PHP/Laravel</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Node.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>MySQL/MongoDB</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/50 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-600 rounded-full filter blur-3xl opacity-10"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 relative">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">My Projects</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="flex justify-center mb-12" data-aos="fade-up">
+                <div class="inline-flex rounded-full p-1 bg-gray-800">
+                    <button class="px-4 py-2 rounded-full bg-indigo-600 text-white">All</button>
+                    <button class="px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Frontend</button>
+                    <button class="px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Backend</button>
+                    <button class="px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Full Stack</button>
+                </div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 hover:border-indigo-500 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">Full featured e-commerce solution with Laravel and React</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">Laravel</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">React</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-400">Full featured e-commerce solution with Laravel and React</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 hover:border-indigo-500 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1740&auto=format&fit=crop" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-300 mb-4">Productivity application with real-time updates</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">React</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-400">Productivity application with real-time updates</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 hover:border-indigo-500 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1740&auto=format&fit=crop" alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                        <p class="text-gray-300 mb-4">Creative portfolio with Three.js animations</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">Three.js</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">GSAP</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 text-indigo-400 rounded-full text-xs">Tailwind</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                        <p class="text-gray-400">Creative portfolio with Three.js animations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="px-8 py-3 border border-indigo-400 text-indigo-400 hover:bg-indigo-400/10 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12 relative">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">My Experience</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-600 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="mb-12" data-aos="fade-right">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-xl font-bold">Senior Full Stack Developer</h3>
+                            <p class="text-indigo-400">Tech Solutions Inc.</p>
+                            <p class="text-gray-500">2021 - Present</p>
+                        </div>
+                        <div class="hidden md:block w-8 h-8 bg-indigo-600 rounded-full border-4 border-gray-900 z-10"></div>
+                        <div class="md:w-1/2 md:pl-8">
+                            <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-700">
+                                <p>Leading a team of developers to build enterprise-level web applications. Responsibilities include architecture design, code reviews, and implementing CI/CD pipelines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="mb-12" data-aos="fade-left">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 order-1 md:order-none mb-6 md:mb-0">
+                            <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-700">
+                                <p>Developed and maintained multiple web applications using Laravel and React. Implemented RESTful APIs and optimized database performance.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-8 h-8 bg-purple-600 rounded-full border-4 border-gray-900 z-10"></div>
+                        <div class="md:w-1/2 md:pl-8 order-first md:order-none md:text-left text-right">
+                            <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                            <p class="text-indigo-400">Digital Creations</p>
+                            <p class="text-gray-500">2018 - 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="mb-12" data-aos="fade-right">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-xl font-bold">Frontend Developer</h3>
+                            <p class="text-indigo-400">Web Design Co.</p>
+                            <p class="text-gray-500">2016 - 2018</p>
+                        </div>
+                        <div class="hidden md:block w-8 h-8 bg-indigo-600 rounded-full border-4 border-gray-900 z-10"></div>
+                        <div class="md:w-1/2 md:pl-8">
+                            <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-700">
+                                <p>Created responsive and interactive user interfaces using modern JavaScript frameworks. Collaborated with designers to implement pixel-perfect UIs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/50 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-indigo-600 rounded-full filter blur-3xl opacity-10"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 relative">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Get In Touch</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <p class="text-gray-400 mb-8">
+                        Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-400">waqar@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p class="text-gray-400">+92 300 1234567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Location</h4>
+                                <p class="text-gray-400">Lahore, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Follow Me</h4>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-indigo-600 flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-red-600 flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-2/3" data-aos="fade-left">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Waqar Ashraf</span>
+                    </a>
+                    <p class="text-gray-500 mt-2">Full Stack Developer</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-600 text-sm">© 2023 Waqar Ashraf Gondal. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-lg transform transition-all duration-300 opacity-0 invisible hover:bg-indigo-700 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #818cf8;
+        }
+        
+        /* Text gradient animation */
+        .text-gradient-animate {
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-gradient 4s linear infinite;
+        }
+        
+        /* Navbar link animation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(to right, #818cf8, #a78bfa);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Timeline responsive adjustments */
+        @media (max-width: 767px) {
+            .relative.max-w-3xl.mx-auto::before {
+                left: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Typewriter Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = document.getElementById('typewriter');
+            const strings = [
+                "Full Stack Developer",
+                "Laravel Expert",
+                "React Enthusiast",
+                "UI/UX Designer",
+                "Problem Solver"
+            ];
+            
+            let currentString = 0;
+            let currentChar = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function type() {
+                const fullText = strings[currentString];
+                
+                if (isDeleting) {
+                    typewriter.textContent = fullText.substring(0, currentChar - 1);
+                    currentChar--;
+                    typingSpeed = 50;
+                } else {
+                    typewriter.textContent = fullText.substring(0, currentChar + 1);
+                    currentChar++;
+                    typingSpeed = 100;
+                }
+                
+                if (!isDeleting && currentChar === fullText.length) {
+                    typingSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && currentChar === 0) {
+                    isDeleting = false;
+                    currentString = (currentString + 1) % strings.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(type, typingSpeed);
+            }
+            
+            // Start typing after a delay
+            setTimeout(type, 1000);
+            
+            // Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // GSAP Animations
+            gsap.from(".nav-link", {
+                duration: 0.5,
+                y: -20,
+                opacity: 0,
+                stagger: 0.1,
+                delay: 0.5
+            });
+            
+            // Initialize Lottie animations
+            if (document.querySelector('lottie-player')) {
+                LottieInteractivity.create({
+                    player: '#firstLottie',
+                    mode: 'scroll',
+                    actions: [
+                        {
+                            visibility: [0, 1],
+                            type: 'seek',
+                            frames: [0, 100]
+                        }
+                    ]
+                });
+            }
+        });
+    </script>
+</body>
+</html>
